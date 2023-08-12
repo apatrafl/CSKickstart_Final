@@ -1,0 +1,618 @@
+import time
+import random
+win = True
+Wiki = 0
+Sofi = 0
+Jam = 0
+wrong = 0
+
+print("_____________      _____       _____        _____        ______         _____            ______________")
+print("|           |      |   |       |    \       |   |       /      \        |   |           /              \ ")
+print("|   --------       |   |       |     \      |   |      /        \       |   |          |    -----------/")
+print("|   |_______       |   |       |      \     |   |     |   ----   |      |   |          |    |          ")
+print("|   ________|      |   |       |       \    |   |     |   |  |   |      |   |          \     \_________")
+print("|   |              |   |       |   |\   \   |   |     |    ~~    |      |   |           \               \ ")
+print("|   |              |   |       |   | \   \  |   |     |    ___   |      |   |            \---------\     |")
+print("|   |              |   |       |   |  \   \ |   |     |   |   |  |      |   |______                /     /")
+print("|   |              |   |       |   |   \   \|   |     |   |   |  |      |          |    ----------/     /")
+print("_____              _____       _____    _________     _____   _____     ____________   |_______________/")
+print("  ")
+time.sleep(2)
+print("  ")
+print("-----           -----           -----    --------------     --------------      -------   -----")
+print("\    \         /     \         /    /    |            |    |              |     |     |  /     /")
+print(" \    \       /   _   \       /    /     |     --------    |      --------      |     | /     / ")
+print("  \    \     /   / \   \     /    /      |     |_______    |      |_______      |     |/     /   ")
+print("   \    \   /   /   \   \   /    /       |     ________|   |      ________|     |           /          ")
+print("    \    \ /   /     \   \ /    /        |     |           |     |              |           \     ")
+print("     \    -   /       \   -    /         |      -------|   |      ---------|    |            \   ")
+print("      \      /         \      /          |             |   |               |    |     /\      \     ")
+print("       \    /           \    /           |             |   |               |    |     | \      \       ")
+print("        ----             ----            |-------------|   |---------------|    |_____|  \______\  ")
+
+print("  ")
+time.sleep(2)
+print("It's the final days before summer starts. The Berkeley campus is abuzz with stress and caffeine.") 
+print(" ")
+time.sleep(2)
+print("You can practically feel the will to live leave the entire class of 2027 class.")
+print("  ")
+time.sleep(2)
+print("You're on the final stretch, so close yet so far. All you have to do is survive finals week.")
+
+time.sleep(5)
+print("  ")
+print("DAY ONE")
+print(" ")
+
+time.sleep(2)
+print("You have 5 minutes before your CS61A final when suddenly your friends approach you. Wiki, Jam, and Sofi walk up to you, asking to last minute study.")
+print("  ")
+time.sleep(2)
+print("You can only choose one friend to share your study guide and study with.")
+
+time.sleep(2)
+print("  ")
+print("a. Wiki")
+print("b. Jam")
+print("c. Sofi")
+print("d. None of them, we are fulfilling the Berkeley stereotype and we are cutthroat")
+
+first = input("Who do you choose? ")
+
+if first == "a":
+    Wiki = Wiki + 1
+    time.sleep(2)
+    print(" ")
+    print("Congrats! You studied and did alright, or as well as you could considering you studied 5 minutes before.")
+
+elif first == "b":
+    Jam = Jam + 1
+    time.sleep(2)
+    print(" ")
+    print("Congrats! You studied and did alright, or as well as you could considering you studied 5 minutes before.")
+
+elif first == "c":
+    Sofi = Sofi + 1
+    time.sleep(2)
+    print(" ")
+    print("Congrats! You studied and did alright, or as well as you could considering you studied 5 minutes before.")
+
+elif first == "d":
+    print("   ")
+    print("That's highkey messed up ngl.")
+    time.sleep(2)
+    print("   ")
+    print("Your hyper competetive nature gets you socially isolated. What does that mean?")
+    time.sleep(2)
+    print("   ")
+    print("Well, no one wants to deal with you and your toxic self and you get abandoned, so L")
+    time.sleep(2)
+    print("   ")
+    print("I lowkey made this game almost impossible to lose and yet somehow you did, so congrats ig")
+    time.sleep(2)
+    print("  ")
+    exit()
+
+else:
+    print("That wasn't an answer choice?")
+    print("  ")
+    time.sleep(2)
+    print("I guess you didn't study with anyone you loner.")
+    print("  ")
+    wrong = wrong + 1
+
+print("  ")
+time.sleep(2)
+print("You leave the exam, walking quickly straight through Telegraph. Suddently, an unhoused individual approaches you.")
+print("  ")
+time.sleep(2)
+print("He asks for your backpack, his tone a lot nicer than you expected considering he's threatening you. You politely decline, reciprocating his kindness.")
+print("  ")
+time.sleep(2)
+print("He's pretty adamant that he wants your bag, but he's also fair enough that he's willing to play you for it.")
+print("  ")
+time.sleep(2)
+
+print ("Start guessing...\n")
+time.sleep(0.5)
+## A List Of Secret Words
+words = ['engineering','computer','science','kickstart','berkeley','python','research','']
+word = random.choice(words)
+guesses = ''
+turns = 5
+while turns > 0:         
+    failed = 0             
+    for char in word:      
+        if char in guesses:    
+            print (char,end="")    
+        else:
+            print ("_",end=""),     
+            failed += 1    
+    if failed == 0:
+        print("  ")        
+        print ("\nYou won")
+        print(" ")
+        time.sleep(2)
+        print("With your bag in hand, you make your way home all safe and sound!")
+        print(" ")
+        win == True 
+        break              
+    guess = input("\nguess a character: ") 
+    guesses += guess                    
+    if guess not in word:  
+        turns -= 1        
+        print("\nWrong")    
+        print("\nYou have", + turns, 'more guesses') 
+        if turns == 0:  
+            print("  ")         
+            print ("\nYou Lose")
+            time.sleep(2)
+            print("  ")
+            print("You begrudgingly hand over your bag. After all, y'all agreed on the stakes.")
+            time.sleep(2)
+            print("  ")
+            print("Bagless, you trudge home.")
+            win == False 
+
+print("")
+
+time.sleep(5)
+print("DAY TWO")
+print("  ")
+time.sleep(2)
+print("You thought that was your only final? You're joking right?")
+print("  ")
+print("So silly, you have more finals later in the week but today is just a club meeting.")
+print("  ")
+time.sleep(2)
+print("It is CSKickstart's final meeting of the year. As the president, you of course knew about this meeting and are prepared.")
+
+if win == False:
+    print("Oh wait. Where are your notes?")
+    print("  ")
+    time.sleep(3)
+    print("Could they have been in your....bag?")
+    print("  ")
+    time.sleep(2)
+    print("Well, you gotta think of something to say.")
+    print("  ")
+    time.sleep(2)
+    print(" As you stand in front of the members, you take a deep breath and make eye contact with...")
+    print("  ")
+    print("a. Wiki")
+    print("b. Jam")
+    print("c. Sofi")
+    print("d. None of them, we are totally fine on our own. Eye contact is for the weak.")
+
+    second = input("Who do you choose? ")
+
+    if second == "a":
+        Wiki = 1 + Wiki
+        time.sleep(2)
+        print(" ")
+        print("You make some sweet eye contact and your meeting goes great!")
+        print("")
+
+    elif second == "b":
+        Jam = 1 + Jam
+        time.sleep(2)
+        print(" ")
+        print("You make some sweet eye contact and your meeting goes great!")
+        print("")
+
+    elif second == "c":
+        Sofi = 1 + Sofi
+        time.sleep(2)
+        print(" ")
+        print("You make some sweet eye contact and your meeting goes great!")
+        print("")
+
+    elif second == "d":
+        print("   ")
+        print("That's highkey messed up.")
+        print("")
+        print("The lack of eye contact freaks the girlies out. Like, why can't you look at them?")
+        print("")
+        print("The members are concerned and you get kicked out of the club as everyone thinks you need some medical attention.")
+        print(" ")
+        print("I lowkey made this game almost impossible to lose and yet somehow you did, so congrats ig")
+        print("  ")
+        exit()
+    else:
+        print("  ")
+        print("That's not an answer choice?")
+        print("  ")
+        time.sleep(2)
+        print("I guess you made no eye contact? You were kind of awkward but you survived.")
+        wrong = wrong + 1
+
+
+if win == True:
+    print(" ")
+    print("You take your notes out of your backpack!")
+    print("  ")
+    time.sleep(2)
+    print("Thank god you still have your backpack :)")
+    print(" ")
+    time.sleep(2)
+    print("The meeting goes great! You're all cool and smart and everyone is just in complete awe of you.")
+    print("")
+    time.sleep(2)
+    print("Nice one!")
+
+print("  ")
+print("Go you! However the week isn't over yet.")
+
+time.sleep(5)
+print("")
+print("DAY THREE")
+print("  ")
+
+time.sleep(2)
+print("It's time for final number 2! Data 8!")
+print("")
+time.sleep(2)
+print("You fought so hard to get off the waitlist, so this final is more important for your ego than your transcript.")
+print("")
+time.sleep(2)
+print("You walk inside confidently, when suddenly you start to fall down one of the many hills on campus.")
+print("")
+time.sleep(2)
+print("You're not so much worried for your body as you are for your notes, which look to be heading towards a puddle.")
+print("")
+time.sleep(2)
+print("However, someone catches the notebook in midair before it can get dirty.")
+print("")
+
+time.sleep(2)
+print("  ")
+print("a. Wiki")
+print("b. Jam")
+print("c. Sofi")
+print("d. None of them, you're so cool so you backflip and catch the notes before they hit the ground.")
+
+print(" ")
+third = input("Who caught the notebook? ")
+
+if third == "a":
+    Wiki = 1 + Wiki
+
+elif third == "b":
+    Jam = 1 + Jam
+
+elif third == "c":
+    Sofi = 1 + Sofi
+
+elif third == "d":
+    print("   ")
+    print("See, it would be totally cool if you backflipped and caught the notebook.")
+    print("")
+    time.sleep(2)
+    print("Every bystander would clap as you walked away, pride filling your body as you grinned. ")
+    print("")
+    time.sleep(2)
+    print("The problem is that you can't backflip. So, this doesn't really work.")
+    print("")
+    time.sleep(2)
+    print("You fall, hitting your head and blacking out.")
+    print("")
+    time.sleep(2)
+    print("The pros are that you don't have to take your final. The cons are that you don't take your final and you flunk out of Berkeley.")
+    print("")
+    time.sleep(2)
+    print("Unfortunate.")
+    print("  ")
+    time.sleep(2)
+    print("I lowkey made this game almost impossible to lose and yet somehow you did, so congrats ig")
+    print("  ")
+    exit()
+else:
+    print("  ")
+    print("That wasn't an answer choice.")
+    time.sleep
+    print("  ")
+    print("Your inability to decide on what to do causes you to fall. Hard.")
+    time.sleep(2)
+    print(" ")
+    print("You fall, hitting your head and blacking out.")
+    print("")
+    time.sleep(2)
+    print("The pros are that you don't have to take your final. The cons are that you don't take your final and you flunk out of Berkeley.")
+    print("")
+    time.sleep(2)
+    print("Unfortunate.")
+    print("  ")
+    time.sleep(2)
+    print("I lowkey made this game almost impossible to lose and yet somehow you did, so congrats ig")
+    print("  ")
+    exit()
+
+print("  ")
+print("They catch your notebook, without a single drop on it. You send them a grateful smile and make your way to your Data 8 final, acing it of course!")
+print("")
+time.sleep(2)
+print("We aren't done yet though!")
+
+time.sleep(5)
+print("")
+print("DAY FOUR")
+print("")
+time.sleep(2)
+print("No final today, but surprise, surprise, you have some problems with your roommate.")
+print("")
+time.sleep(2)
+print("They really want the room to themselves, so what do you do?")
+
+print("a. You leave the room and go hang out with your friends.")
+print("")
+print("b. You say no, citing how you've had a terrible week and need to chill.")
+print("")
+print("c. You say no, pushing her out the room and slamming it behind her.")
+
+choice = input("What do you do? ")
+
+if choice == "a":
+    print("  ")
+    print("Cool!")
+    print("")
+    time.sleep(2)
+    print("You have so many unique friends to choose from!")
+    print("")
+    time.sleep(2)
+    print("a. Wiki")
+    print("b. Jam")
+    print("c. Sofi")
+    print("")
+    fourth = input("Who do you choose? ")
+    if fourth == "a":
+        Wiki = 1 + Wiki
+        print("")
+        print("You're so social, and you have a great time!")
+    
+    elif fourth == "b":
+        Jam = 1 + Jam
+        print("")
+        print("You're so social, and you have a great time!")
+    
+    elif fourth == "c":
+        Sofi = 1 + Sofi
+        print("")
+        print("You're so social, and you have a great time!")
+    
+    else:
+        print("You don't really have any other choices.")
+        print("  ")
+        time.sleep(2)
+        print("I guess you hang out alone.")
+        print("  ")
+        wrong = wrong + 1
+
+
+elif choice == "b":
+    print("  ")
+    print("Um, anti social much?")
+    print("  ")
+    print("I guess I understand but that's sad.")
+    print(" ")
+
+elif choice == "c":
+    print("  ")
+    print("Um, anti social much?")
+    print("  ")
+    print("I guess I understand but that's sad. That was also pretty mean. Sad.")
+    print(" ")
+
+else:
+    print(" ")
+    print("That wasn't an answer choice?")
+    time.sleep(2)
+    print("  ")
+    print("Your inability to decide freaks out your roomate, especially since you're just staring at her.")
+    time.sleep(2)
+    print("  ")
+    print("She ends up leaving, pretty scared of you.")
+    print("  ")
+    time.sleep(2)
+
+print("")
+print("")
+print("You end the day, hopefully you made good choices because we are about to enter...")
+
+time.sleep(5)
+print("")
+print("DAY FIVE")
+
+print("")
+print("It's the final day! What better way to end the week than with one last final!")
+print("")
+time.sleep(2)
+print("It's math final time!")
+print("")
+time.sleep(2)
+print("You make your way to the hall, your hands fidgeting out of nervousness. ")
+print("")
+time.sleep(2)
+print("You studied, you practiced, and you worked hard. Nothing could get in your way.")
+print("")
+time.sleep(2)
+print("Other than rain. Especially rain.")
+print("  ")
+time.sleep(2)
+print("Thankfully, someone saves your week. And your hair. An umbrella appears over your head, held by none other than...")
+
+time.sleep(2)
+print("")
+print("a. Wiki")
+print("b. Jam")
+print("c. Sofi")
+print("d. No one, you like walking in the rain.")
+print("")
+
+time.sleep(2)
+fifth = input("Who do you choose? ")
+if fifth == "a":
+    Wiki = 1 + Wiki
+    
+elif fifth == "b":
+    Jam = 1 + Jam
+    
+elif fifth == "c":
+    Sofi = 1 + Sofi
+
+elif fifth == "d":
+    print("  ")
+    print("You like walking in the rain? Really?")
+    print("  ")
+    print("I'd agree with you, but this isn't a Taylor Swift music video.")
+    print("")
+    time.sleep(2)
+    print("We have no time for this!")
+    print("")
+    print("As expected, you get soaked and start to sneeze. And cough. And die from sickness.")
+    print("")
+    time.sleep(2)
+    print("You miss your final, drop out of Berkeley, and hate the rain now.")
+    print("")
+    time.sleep(2)
+    print("I lowkey made this game almost impossible to lose and yet somehow you did, so congrats ig")
+    print("  ")
+    exit()
+
+else:
+    print("  ")
+    print("Your inability to remember your friend's name offends them.")
+    time.sleep(2)
+    print(" ")
+    print("They take their umbrella and walk away, leaving you soaked.")
+    time.sleep(2)
+    print("")
+    print("As expected, you get soaked and start to sneeze. And cough. And die from sickness.")
+    print("")
+    time.sleep(2)
+    print("You miss your final, drop out of Berkeley, and hate the rain now.")
+    print("")
+    time.sleep(2)
+    print("I lowkey made this game almost impossible to lose and yet somehow you did, so congrats ig")
+    print("  ")
+    exit()
+
+print("  ")
+print("They hold the umbrella above you, shielding you from the disastrous rain and allowing you to go into your hall and ace the exam.")
+print("")
+print("")
+time.sleep(2)
+print("")
+print("You've had a long stressful week. As you pack your final items away, your best friend appears in the doorway")
+print("")
+time.sleep(2)
+print("After the week you shared, who else would appear other than...")
+print("  ")
+time.sleep(5)
+
+if (Wiki >= Jam) and (Wiki >= Sofi):
+    print("")
+    print("Wiki!")
+    time.sleep(3)
+    print("")
+    print("Wiki has always been there for you and you and her have grown to be the best friends you always wanted to be!")
+    time.sleep(2)
+    print("")
+    print("In your time at Berkeley, you know that she's the one you can always count on.")
+    time.sleep(2)
+    print("")
+    print("You and Wiki decide to go to the movies, grabbing popcorn that you'll both end up regretting.")
+    print("  ")
+    time.sleep(2)
+    print("Y'all finish the night with some overpriced Chipotle, laughing as y'all walk home.")
+    print("  ")
+    time.sleep(2)
+    print("")
+    print("You know that no matter how mnay crazy weeks you have, there's no one else you'd rather navigate the week with.")
+    print("")
+    print("")
+    time.sleep(5)
+    print("Especially Finals Week")
+    print("")
+    print("")
+
+if (Jam >= Wiki) and (Jam >= Sofi):
+    print("")
+    print("Jam!")
+    time.sleep(3)
+    print("")
+    print("Jam has always been there for you and you and her have grown to be the best friends you always wanted to be!")
+    print("")
+    time.sleep(2)
+    print("")
+    print("In your time at Berkeley, you know that she's the one you can always count on.")
+    time.sleep(2)
+    print(" ")
+    print("You and Jam decide to sit down, grab some Vaseline Strawberry Pie from Cafe 3, and go on a walk.")
+    print("  ")
+    time.sleep(2)
+    print("You head to a nearby park, Jam's eyes lighting up as she explain her lacrosse expertise, interweaving jokes along the way.")
+    print("")
+    time.sleep(2)
+    print("You know that no matter how mnay crazy weeks you have, there's no one else you'd rather navigate the week with.")
+    print("")
+    print("")
+    time.sleep(5)
+    print("Especially Finals Week")
+    print("")
+    print("")
+
+
+if (Sofi >= Wiki) and (Sofi >= Jam):
+    print("")
+    print("Sofi!")
+    time.sleep(3)
+    print("")
+    print("Sofi has always been there for you and you and her have grown to be the best friends you always wanted to be!")
+    print("")
+    print("")
+    time.sleep(2)
+    print("In your time at Berkeley, you know that she's the one you can always count on.")
+    print(" ")
+    time.sleep(2)
+    print("You and Sofi decide to go on a run, releasing the stress from the day. Y'all run, then walk, and light conversation turns deep.")
+    time.sleep(2)
+    print(" ")
+    print("You grab good food from Manpuku on College Ave, getting Musubi and having a great day!")
+    print("")
+    time.sleep(2)
+    print("You know that no matter how mnay crazy weeks you have, there's no one else you'd rather navigate the week with.")
+    print("")
+    print("")
+    time.sleep(5)
+    print("Especially Finals Week")
+    print("")
+    print("")
+
+if (wrong > Sofi) and (wrong > Wiki) and (wrong > Jam):
+    print("You were so indecisive!")
+    print("")
+    time.sleep(2)
+    print("Too indecisive.")
+    print("")
+    time.sleep(2)
+    print("Your inability to make choices left you alone.")
+    print("")
+    time.sleep(2)
+    print("The person you thought you saw?")
+    print("")
+    time.sleep(2)
+    print("You made them up.")
+    print("")
+    time.sleep(2)
+    print("You leave campus, relatively okay but also relatively alone.")
+    print("")
+    time.sleep(2)
+    print("You realize that you might survive, but to thrive you're going to need to make friends.")
+    print("")
+    time.sleep(2)
+    print("Especially to survive...")
+    print("")
+    time.sleep(2)
+    print("Finals Week.")
+    print(" ")
